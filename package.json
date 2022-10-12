@@ -30,7 +30,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "rimraf dist && unbuild",
-    "tsc": "tsc --noEmit",
+    "tsc": "tsc --emitDeclarationOnly false --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest",
