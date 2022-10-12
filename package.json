@@ -1,0 +1,79 @@
+{
+  "name": "unocss-preset-yew",
+  "version": "0.1.0",
+  "description": "Support for Rust files for Yew front-end framework",
+  "keywords": [
+    "unocss",
+    "unocss-preset",
+    "unocss-preset-yew"
+  ],
+  "author": "brofrain",
+  "license": "MIT",
+  "homepage": "https://github.com/brofrain/unocss-preset-yew",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brofrain/unocss-preset-yew"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "tsc": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "release": "pnpm i && pnpm tsc && pnpm lint && pnpm test:run && pnpm build && bumpp package.json && pnpm publish"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.12",
+    "magic-string": "^0.26.6"
+  },
+  "peerDependencies": {
+    "unocss": ">=0.45.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "@typescript-eslint/utils": "^5.39.0",
+    "@unocss/preset-attributify": "^0.45.28",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsonc": "^2.4.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-unicorn": "^44.0.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-yml": "^1.2.0",
+    "jsonc-eslint-parser": "^2.1.0",
+    "pnpm": "^7.13.2",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.4",
+    "unbuild": "^0.8.11",
+    "unocss": "^0.45.28",
+    "vite": "^3.1.6",
+    "vitest": "^0.24.0",
+    "yaml-eslint-parser": "^1.1.0"
+  }
+}
